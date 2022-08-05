@@ -1,0 +1,78 @@
+(The environment variable) 
+1. BDS=c:\program files (x86)\embarcadero\studio\22.0 
+ 
+(The project's active configuration name) 
+2. Config=Debug 
+ 
+(The project's conditional defines) 
+3. Defines=DEBUG;;FRAMEWORK_VCL 
+ 
+(The environment variable) 
+4. DIR= 
+ 
+(The project's include path) 
+5. INCLUDEPATH=c:\program files (x86)\embarcadero\studio\22.0\lib\Win32\debug;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDICodeLibraryJCL-2021.09\lib\d28\win32\debug;C:\Program Files (x86)\Embarcadero\Studio\22.0\Components\EhLib\Lib\Win32\Debug;c:\program files (x86)\embarcadero\studio\22.0\lib\Win32\release;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\Imports;c:\program files (x86)\embarcadero\studio\22.0\Imports;C:\Users\Public\Documents\Embarcadero\Studio\22.0\Dcp;c:\program files (x86)\embarcadero\studio\22.0\include;C:\Libs11\Clever_Internet_Suite_v10.0.930\Sources;C:\Libs11\Clever_Internet_Suite_v10.0.930\Sources\common;C:\Libs11\Clever_Internet_Suite_v10.0.930\Sources\design;C:\Libs11\Clever_Internet_Suite_v10.0.930\Sources\resources;C:\Libs11\Clever_Internet_Suite_v10.0.930\Sources\ssh;C:\Libs11\EMSADataImport3120\source;C:\Program Files (x86)\FMSoft\Framework\uniGUI;C:\Program Files (x86)\FMSoft\Framework\uniGUI\uIndy;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Core;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\VCL;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Components;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Design;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Source\Res;C:\Program Files (x86)\FMSoft\Framework\uniGUI\uSynEdit\Source;C:\Program Files (x86)\FMSoft\Framework\uniGUI\Dcu\Delphi2024;C:\Program Files (x86)\FMSoft\Framework\uniTools;C:\Program Files (x86)\FMSoft\Framework\uniTools\Dcu\Delphi2024;C:\Libs11\EMSExport4.16.0.2\source;C:\Libs11\Woll2Woll_InfoPower_4k_21.0.05\source;C:\Libs11\Woll2Woll_InfoPower_4k_21.0.05\source\windows;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDICodeLibraryJCL-2021.09\lib\d28\win32;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDICodeLibraryJCL-2021.09\source\include;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDIVisualComponentLibraryJVCL-2021.09\lib\D28\win32;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDIVisualComponentLibraryJVCL-2021.09\common;C:\Users\pavlos\Documents\Embarcadero\Studio\22.0\CatalogRepository\JEDIVisualComponentLibraryJVCL-2021.09\Resources;C:\Libs11\hbTapi_Components_2013_2.4.1\hbTapi Components 2013\Sourcee;c:\libs11\fastreport_6.9.14\libd28;C:\dev\TimologieraAll\BnLibs\Unigui;C:\Program Files (x86)\Embarcadero\Studio\22.0\source\ToolsAPI;C:\Program Files (x86)\Embarcadero\Studio\22.0\Components\EhLib\Lib\Win32\Release 
+ 
+(The input file's directory) 
+6. INPUTDIR=C:\Users\pavlos\broot\tmp\build-events\ 
+ 
+(The input file's extension) 
+7. INPUTTEXT=.dproj 
+ 
+(The input file's name, with extension 
+8. INPUTFILENAME=Project7.dproj 
+ 
+(The input file's name, without extension) 
+9. INPUTNAME=Project7 
+ 
+(The input file's full path) 
+10. INPUTPATH=C:\Users\pavlos\broot\tmp\build-events\Project7.dproj 
+ 
+(Local command entered by user in project manager) 
+11. LOCALCOMMAND= 
+ 
+(The output file's directory) 
+12. OUTPUTDIR=.\Win32\Debug\ 
+ 
+(The output file's extension) 
+13. OUTPUTTEXT=.exe 
+ 
+(The output file's name, with extension) 
+14. OUTPUTFILENAME=Project7.exe 
+ 
+(The output file's name, without extension) 
+15. OUTPUTNAME=Project7 
+ 
+(The output file's full path) 
+16. OUTPUTPATH=C:\Users\pavlos\broot\tmp\build-events\Win32\Debug\Project7.exe 
+ 
+(The environment variable) 
+17. Path=C:\Users\Public\Documents\Embarcadero\InterBase\redist\InterBase2020\IDE_spoof;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin;C:\Program Files (x86)\PHP\v5.6;C:\Program Files\AdoptOpenJDK\jdk-8.0.242.08-hotspot\bin;C:\Program Files (x86)\Embarcadero\Studio\22.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\22.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64;C:\Program Files\Eclipse Adoptium\jdk-11.0.14.101-hotspot\bin;C:\Program Files (x86)\Embarcadero\Studio\18.0\bin;C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl;C:\Program Files (x86)\Embarcadero\Studio\18.0\bin64;C:\Users\Public\Documents\Embarcadero\Studio\18.0\Bpl\Win64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Calibre2\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Git\cmd;C:\Program;c:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;c:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Users\pavlos\AppData\Local\Microsoft\WindowsApps;C:\Users\pavlos\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\pavlos\.dotnet\tools; 
+ 
+(The project's active platform name) 
+18. Platform=Win32 
+ 
+(The project's directory) 
+19. PROJECTDIR=C:\Users\pavlos\broot\tmp\build-events 
+ 
+(The project file's extension) 
+20. PROJECTTEXT=.dproj 
+ 
+(The project file's name, with extension) 
+21. PROJECTFILENAME=Project7.dproj 
+ 
+(The project's name) 
+22. PROJECTNAME=Project7 
+ 
+(The project file's full path) 
+23. PROJECTPATH=C:\Users\pavlos\broot\tmp\build-events\Project7.dproj 
+ 
+(Save the input file to disk before it is compiled) 
+24. SAVE= 
+ 
+(The environment variable) 
+25. SystemRoot=C:\Windows 
+ 
+(The environment variable) 
+26. WINDIR=C:\Windows 
+ 
