@@ -1,0 +1,15 @@
+# emacs auto-save files
+*#
+# emacs undo tree
+*~undo-tree~
+# vscode
+.vscode
+
+build/*
+
+# RAD studio files
+__history
+__recovery
+*.dproj.local
+*.identcache
+*.delphilsp.json

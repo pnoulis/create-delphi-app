@@ -1,0 +1,1 @@
+Write-Output "postBuild -> " $env:OUTPUTDIR >> build.log

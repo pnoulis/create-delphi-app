@@ -1,0 +1,1 @@
+Write-Output "preBuild -> " $env:OUTPUTDIR > build.log
