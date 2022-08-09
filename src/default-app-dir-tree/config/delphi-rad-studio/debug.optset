@@ -33,37 +33,12 @@ set PROJECTPATH=$(PROJECTPATH)
 set SAVE=$(SAVE)
 set SystemRoot=$(SystemRoot)
 set WINDIR=$(WINDIR)
-powershell -ExecutionPolicy Unrestricted -file scripts\preBuild.debug.ps1
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\initBuild.ps1
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\preBuild.debug.ps1
 $(PreBuildEvent)]]>
         </PreBuildEvent>
         <PostBuildEvent>
-<![CDATA[set BDS=$(BDS)
-set Config=$(Config)
-set Defines=$(DEFINES)
-set DIR=$(DIR)
-set INCLUDEPATH=$(INCLUDEPATH)
-set INPUTDIR=$(INPUTDIR)
-set INPUTTEXT=$(INPUTEXT)
-set INPUTFILENAME=$(INPUTFILENAME)
-set INPUTNAME=$(INPUTNAME)
-set INPUTPATH=$(INPUTPATH)
-set LOCALCOMMAND=$(LOCALCOMMAND)
-set OUTPUTDIR=$(OUTPUTDIR)
-set OUTPUTTEXT=$(OUTPUTEXT)
-set OUTPUTFILENAME=$(OUTPUTFILENAME)
-set OUTPUTNAME=$(OUTPUTNAME)
-set OUTPUTPATH=$(OUTPUTPATH)
-set Path=$(Path)
-set Platform=$(Platform)
-set PROJECTDIR=$(PROJECTDIR)
-set PROJECTEXT=$(PROJECTEXT)
-set PROJECTFILENAME=$(PROJECTFILENAME)
-set PROJECTNAME=$(PROJECTNAME)
-set PROJECTPATH=$(PROJECTPATH)
-set SAVE=$(SAVE)
-set SystemRoot=$(SystemRoot)
-set WINDIR=$(WINDIR)
-powershell -ExecutionPolicy Unrestricted -file scripts\postBuild.debug.ps1
+<![CDATA[powershell -ExecutionPolicy Unrestricted -file scripts\build-events\postBuild.debug.ps1
 $(PostBuildEvent)]]>
         </PostBuildEvent>
     </PropertyGroup>
