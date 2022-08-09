@@ -1,5 +1,6 @@
 # About
-Version = 1.0.0
+Version: 1.0.0
+
 Create-delphi-app automates some part of the build process.
 
 It creates a skeleton directory tree with the neccessary files
