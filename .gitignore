@@ -6,11 +6,3 @@
 .vscode
 
 build/*
-ignore/*
-
-# RAD studio files
-__history
-__recovery
-*.dproj.local
-*.identcache
-*.delphilsp.json

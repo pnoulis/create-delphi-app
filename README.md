@@ -1,13 +1,29 @@
 # About
 Version: 1.0.0
 
-Create-delphi-app automates some part of the build process.
-
-It creates a skeleton directory tree with the neccessary files
-to automate the build process.
+A script that produces a directory tree with all the neccessary 
+tools to setup an automated build environment for delphi projects.
 
 One can modify the build scipts at scripts/build-events/*
 to suit their needs.
+
+# Installation & usage
+1. Clone this repository
+2. Build the project
+   Within the repository run the ./scripts/build.ps1
+   it should produce a directory at ./build/create-delphi-app-v$(version)
+3. Place the build wherever it suits you
+4. Adjust your $env:path to include the build dir
+5. run cda ./target/dir
+
+# Development
+Follow the installation process. For developing one should run the script at:
+./scripts/run.ps1 ./path/to/target
+
+There are also 2 visual studio custom tasks for building the project.
+
+run -> intended for when developing which builds the project into build/run by default
+build -> intended for distribution where it is build at build/
 
 ## build scripts default behavior
 ### debug build configuration

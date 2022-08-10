@@ -1,33 +1,46 @@
 # cda.ps1 (create delphi app)
-function getCDARootPath {
-    Split-Path -Parent $PSCommandPath | Split-Path -parent
-}
-function getTargetRootPath {
-(Resolve-path -Path (split-path $args[0] -Parent)).Path
-}
+# The script will produce a dirtree and the tools to necessary to
+# automate a simple build process for delphi applications.
 
-function getTargetName {
-    split-path $args[0] -Leaf
-}
+# @@ $arg[0]
+# directory path "cda" should instantiate a new delphi app
 
-function getTargetFullPath {
-    Join-Path -Path $args[0] -childPath $args[1]
+if ($args.count -lt 1) {
+    Write-Output "create-delphi-app: path not provided"
+    exit 1
 }
 
-$cdaRootPath=getCDARootPath
-$targetName=getTargetName $args[0]
-$targetRootPath=getTargetRootPath $args[0]
-$targetFullPath=getTargetFullPath $targetRootPath $targetName
+# get script root path
+$cdaRoot = split-path $PSCommandPath -parent
 
-
-if (Test-Path -Path $targetFullPath) {
-    Write-Output "cda.ps1 -> Target path already exists: $targetFullPath"
-    exit;
+# remove target dir name from path and make sure the remainder is valid
+## specifically (split-path path -parent) will return an empty string if
+## the target dir name is relative to the cwd and no path specifiers such as ./
+## have been provided
+$tpath = (split-path $args[0] -parent)
+if (-not $tpath) {
+    $tpath = "./"
 }
 
-Push-location
-Push-Location -Path "$cdaRootPath/src"
-Copy-Item .\default-app-dir-tree -Destination "$targetFullPath/" -Recurse
+# expand target root path
+try {
+    $tpath = resolve-path $tpath
+}
+catch {
+    Write-output "create-delphi-app: parts of path do not exist: $($args[0])"
+    exit 1
+}
 
-Pop-Location
-Write-Output 'Done'
+# join dir root and name
+$tpath = join-path -path $tpath -childpath (split-path $args[0] -leaf)
+
+# make sure target path does not exist
+if (Test-Path $tpath) {
+    Write-output "create-delphi-app: target directory exists already: $($args[0])"
+    exit 1
+}
+
+# instantiate new delphi app
+Copy-Item -path "$cdaRoot/default-app-dir-tree/" -Destination $tpath -Recurse
+
+Write-Output "DONE: $tpath"
