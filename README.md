@@ -1,5 +1,5 @@
 # About
-Version: 1.0.0
+Version: 2.0.0
 
 A script that produces a directory tree with all the neccessary 
 tools to setup an automated build environment for delphi projects.
