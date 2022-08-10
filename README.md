@@ -36,8 +36,8 @@ copies ./build/$(platform)/$(config) into ./build/$(projectName)-$(platform)-v$(
 Version is read from ./config/config.ini which the user must increment to reflect
 an actual version bump.
 
-# Things to do prior to building the application for the first time
-## Apply the build configuration option set.
+# Usage
+## Apply the build configuration option set within rad studio
 In the project viewer expand the Build Configuration dropdown.
 There for both default build configurations (Debug & Release) apply the following steps:
 
@@ -52,7 +52,7 @@ There for both default build configurations (Debug & Release) apply the followin
 3. Save Project 
 4. Repeat for next build configuration
 
-## Apply the formatter configuration
+## Apply the formatter configuration within rad studio
 Click on Tools/options at the actions toolbar.
 Click on the language/formater/profile and status dropdown.
 load the formatter at config/delphi-rad-studio/formatter.config
