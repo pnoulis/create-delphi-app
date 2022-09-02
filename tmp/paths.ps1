@@ -36,7 +36,7 @@ function spliceNode {
 
 function addNode {
     param(
-        [psobject]$tree
+        [HashTable]$tree
     )
     $exclude = ".*", "build"
     $level = (Get-ChildItem -Exclude $exclude)
@@ -44,13 +44,10 @@ function addNode {
     foreach ($node in $level) {
         $isDir = isDirectory $node
         $node = spliceNode $node
-        $tree | Add-Member `
-            -MemberType NoteProperty `
-            -Name "$($node.name)" `
-            -Value $node
+        $tree.add($node.name, $node)
         if ($isDir) {
             push-location $node.name
-            $tree."$($node.name)" = addNode $node
+            $tree[$node.name] = addNode $node
         }
     }
     Pop-Location

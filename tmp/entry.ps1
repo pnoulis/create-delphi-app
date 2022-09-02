@@ -35,4 +35,4 @@ if ($containers) {
     $config.containers = buildContainerConfigurators $config $containers
 } 
 
-inspectObj $config "target"
+inspectObj $config.containers "*"
