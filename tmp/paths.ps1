@@ -10,6 +10,19 @@ function isDirectory {
     )
     $node -is [System.IO.DirectoryInfo]
 }
+function resolveTarget {
+    param(
+        [string]$target
+    )
+    $target = Split-Path $target -Parent
+    if (-not $target) {
+        $config.app.path = './'
+    }
+    if (-not (Test-path $target)) {
+        return ''
+    }
+    return (dos2Unix (resolve-path $target).path)
+}
 
 function spliceNode {
     param(
@@ -49,5 +62,5 @@ function buildDirTree {
         root = dos2Unix (split-path -parent $PSCommandPath | Split-Path -parent)
     }
     $dirtree = addNode $dirTree
-    return $dirTree | ConvertTo-Json -Depth 100
+    return $dirTree 
 }

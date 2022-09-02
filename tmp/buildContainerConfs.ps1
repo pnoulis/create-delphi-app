@@ -1,6 +1,10 @@
 function buildContainerConfigurators {
     param(
-        [psCustomObject]$dirTree
+        [psCustomObject]$config,
+        [string[]]$Containers
     )
-    return "otehuetnoh"
+
+    #$config.containers = [PSCustomObject[]]::new($containers.Length)
+    $config.containers = "tohetnuhoentuh"
+    return $config.containers
 }

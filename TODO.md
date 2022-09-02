@@ -4,6 +4,8 @@
 
 
 # building of container configurations
-- construct a directory image of the first level of the directory to help
+- DONE construct an image of the directory tree to ease searching through the file system
+- DONE format the inputs
+- TODO construct the container configurations
 
 # building of the source tree template
