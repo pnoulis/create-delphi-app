@@ -26,7 +26,6 @@ if (-not $config.target.path) {
 # construct an image of the directory tree
 $config.dirTree = buildDirTree
 
-
 # construct the container configuration interfaces as per user
 # request
 if ($containers) {
