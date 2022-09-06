@@ -2,33 +2,28 @@
 . ".\tmp\utils.ps1"
 
 $BRATNET_DOCKERHUB = "bratnet/"
-
 function isDockerInPath {
     if ((Get-Command -CommandType application docker -all).length -eq 0) {
         throw "The docker executable could not be found at '$$env:path'"
     }
 }
-
 function isDockerdRunning {
     if ((Get-Process "Docker Desktop").length -eq 0) {
         throw "No 'Docker Desktop' process running"
     }
 }
-
 function extractRepoFromAsset {
     param(
         [string]$asset
     )
     return $BRATNET_DOCKERHUB + $asset.split('-')[0]
 }
-
 function extractTagFromAsset {
     param(
         [string]$asset
     )
     return ':' + ($asset.split('-')[1] -replace '\.Dockerfile$', '')
 }
-
 function findImage {
     param(
         [string]$imageName
@@ -54,7 +49,6 @@ function buildImage {
     }
     return $id
 }
-
 function rmImage {
     param(
         [string]$name
@@ -72,14 +66,12 @@ function getAsset {
     )
     return $dirTree.assets['docker-images'][$asset + '.Dockerfile']
 }
-
 function formatTimeString {
     param(
         [string]$datetime
     )
     return (Get-date -Date $datetime -UFormat "%Y-%m-%dT%T%Z")
 }
-
 function newImage {
     return @{
         asset     = @{ name = ''; path = '' }
@@ -121,7 +113,7 @@ function getImage {
         Write-host "Image dockerfile has been modified since last build"
         Write-host "Deleting previous image $($image.name)"
         rmImage $image.name
-        $image = getImage $dirTree $assetID
+        return (getImage $dirTree $assetID)
     }
 
     return $image

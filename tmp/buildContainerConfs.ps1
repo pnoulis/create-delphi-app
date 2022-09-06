@@ -9,9 +9,14 @@ function isImage {
     }
     return $false
 }
+
+function buildImage {
+
+}
 function newConfiguratorTemplate {
     return @{
         image = ""
+        dockerfile = ""
         name = ""
         container = ""
         persist = $true
@@ -30,12 +35,12 @@ function buildContainerConfigurators {
         $configurator = $config.containers[$i]
         $configurator.image = $containers[$i].split(':')[0]
         $configurator.name = $containers[$i].split(':')[1]
-        $configurator.image = $config.dirtree.assets['docker-images']['mssql_server_2019.Dockerfile'].name
         write-host "assigned image path" $configurator.image
         if ( -not (isImage $config.dirTree $configurator.image)) {
             Write-host "cda: could not resolve image: " $configurator.image
             return $config.containers
         }
+        $configurator.image = $config.dirtree.assets['docker-images']['mssql_server_2019.Dockerfile'].name
     }
     return $config.containers
 }
