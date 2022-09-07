@@ -1,9 +1,6 @@
 param(
-    [Parameter(Mandatory = $True, Position = 0, HelpMessage = "create, start, stop, list")]
+    [Parameter(Mandatory = $True, Position = 0, HelpMessage = "create, start, stop, list, help")]
     [string]$action,
-
-    [Parameter()]
-    [Switch]$help,
 
     [Parameter()]
     $containers,

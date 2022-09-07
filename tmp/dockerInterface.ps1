@@ -62,9 +62,14 @@ function rmImage {
 function getAsset {
     param(
         [hashtable]$dirTree,
-        [string]$asset
+        [string]$assetID
     )
-    return $dirTree.assets['docker-images'][$asset + '.Dockerfile']
+
+    $asset = $dirTree.assets['docker-images'][$assetID + '.Dockerfile']
+    if (-not $asset) {
+        throw "asset: '$assetID' could not be found"
+    }
+    return $asset
 }
 function formatTimeString {
     param(
@@ -89,10 +94,6 @@ function getImage {
 
     $image = newImage
     $image.asset = getAsset $dirTree $assetID
-
-    if (-not $image.asset) {
-        throw "asset: '$assetID' could not be found"
-    }
 
     $image.name = (extractRepoFromAsset $image.asset.name) + (extractTagFromAsset $image.asset.name)
     $image.id = findImage $image.name

@@ -1,46 +1,31 @@
 . ".\tmp\utils.ps1"
-function isImage {
-    param(
-        [hashtable]$dirTree,
-        [string]$image
-    )
-    if ($dirTree.assets['docker-images'].contains($image)) {
-        return $true
+
+
+$configurator = @{
+    server = @{
+        host = 'localhost:port or www.something.com:port'
     }
-    return $false
-}
-
-function buildImage {
-
-}
-function newConfiguratorTemplate {
-    return @{
-        image = ""
-        dockerfile = ""
-        name = ""
-        container = ""
-        persist = $true
-        backup = $false
+    client = @{
+        host = 'hostname or ip'
+        path = '/'
     }
-}
-function buildContainerConfigurators {
-    param(
-        [psCustomObject]$config,
-        [string[]]$Containers # "image:serviceName,..."
-    )
-
-    $config.containers = [PSCustomObject[]]::new($containers.Length)
-    for (($i = 0); $i -lt $containers.length; $i++) {
-        $config.containers[$i] = newConfiguratorTemplate
-        $configurator = $config.containers[$i]
-        $configurator.image = $containers[$i].split(':')[0]
-        $configurator.name = $containers[$i].split(':')[1]
-        write-host "assigned image path" $configurator.image
-        if ( -not (isImage $config.dirTree $configurator.image)) {
-            Write-host "cda: could not resolve image: " $configurator.image
-            return $config.containers
+    services = @(
+        @{
+            name = "this should only name the service requested"
+            ID = "this is the container id created to accomodate the service request"
+            state = "running | stopped | error"
+            args = @{
+                username = ""
+                password = ""
+                seed = @('one', 'two', 'three')
+            }
+            mode = @{
+                persist = $false
+                backup = $false
+                transfer = $true
+            }
         }
-        $configurator.image = $config.dirtree.assets['docker-images']['mssql_server_2019.Dockerfile'].name
-    }
-    return $config.containers
+    )
 }
+
+Write-host ($configurator | ConvertTo-Json -depth 99)

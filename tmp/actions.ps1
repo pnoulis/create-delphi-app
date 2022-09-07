@@ -23,7 +23,9 @@ function stop {
 }
 
 function list {
-    Write-host "say list"
-    inspectObj $dirtree.assets['docker-images'] "*"
+    $images = $dirtree.assets['docker-images'].keys.where{ $_ -ne "name" -and $_ -ne "path"}
+    forEach ($image in $images) {
+        Write-host $image.split(".")[0]
+    }
 }
 
