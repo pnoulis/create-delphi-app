@@ -22,7 +22,7 @@ $configurator = @{
             mode = @{
                 persist = $false
                 backup = $false
-                transfer = $true
+                mount = $false
             }
         }
     )

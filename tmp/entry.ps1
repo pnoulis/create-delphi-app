@@ -1,5 +1,5 @@
 param(
-    [Parameter(Mandatory = $True, Position = 0, HelpMessage = "create, start, stop, list, help")]
+    [Parameter(Mandatory = $True, Position = 0, HelpMessage = "create, add, start, stop, list, help")]
     [string]$action,
 
     [Parameter()]
@@ -7,6 +7,7 @@ param(
 
     [Parameter()]
     [string]$path
+
 )
 
 . ".\tmp\actions.ps1"
@@ -17,6 +18,10 @@ switch ($action) {
             throw "Create: No path provided"
         }
         create $path $containers
+        break
+    }
+    "add" {
+        add $containers
         break
     }
     "start" {

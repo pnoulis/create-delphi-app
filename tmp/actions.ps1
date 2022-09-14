@@ -14,6 +14,16 @@ function create {
     Write-host "say create" $path $containers
 }
 
+function add {
+    param(
+        [parameter(Mandatory = $True, Position = 0, HelpMessage = "path to add service to")]
+        [string]$path,
+
+        [parameter(Position = 1, HelpMessage = "containers to attach")]
+        $containers
+    )
+}
+
 function start {
     write-host "say start"
 }
